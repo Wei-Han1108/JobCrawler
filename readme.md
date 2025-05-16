@@ -45,49 +45,12 @@ pip install -r requirements.txt
 
 ### 基本使用
 
-```python
-from src import scrape_jobs
-
-# 基本搜索
-jobs = scrape_jobs(
-    site_name=["google", "linkedin", "indeed"],
-    search_term="python developer",
-    results_wanted=10
-)
-
-# 保存结果
-jobs.to_csv("jobs.csv", index=False)
+```bash
+#运行 test.py文件
+cd JobCraeler
+python test.py
 ```
-
-### 高级使用
-
-```python
-from src import scrape_jobs
-
-# 高级搜索
-jobs = scrape_jobs(
-    site_name=["google", "linkedin"],
-    search_term="python developer",
-    google_search_term="python developer jobs remote",  # 自定义 Google 搜索词
-    location="New York",
-    distance=50,  # 搜索半径（英里）
-    is_remote=True,  # 仅远程工作
-    job_type="fulltime",  # 工作类型
-    results_wanted=20,
-    hours_old=24,  # 24小时内的职位
-    country_indeed='USA'
-)
-```
-
-### ScraperAPI 配置
-
-在 `src/util.py` 中配置 ScraperAPI：
-
-```python
-# ScraperAPI 配置
-USE_SCRAPERAPI = True
-SCRAPERAPI_KEY = "your_api_key_here"
-```
+结果生成在 JobCrawler/jobs.csv
 
 ## 参数说明
 
