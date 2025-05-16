@@ -1,6 +1,7 @@
 # JobCrawler
 
 一个强大的多源职位爬虫系统，支持从多个主流招聘网站和 Google 搜索获取职位信息。
+![image](https://github.com/user-attachments/assets/ccba4114-21aa-4a8a-bde6-9d795f31bb72)
 
 ## 功能特点
 
