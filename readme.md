@@ -1,88 +1,88 @@
 # JobCrawler
 
-一个强大的多源职位爬虫系统，支持从多个主流招聘网站和 Google 搜索获取职位信息。
-## 输出csv文件
+A powerful multi-source job scraping system that aggregates job listings from multiple major job boards and Google Search.
+
+## CSV Output
 ![image](https://github.com/user-attachments/assets/ccba4114-21aa-4a8a-bde6-9d795f31bb72)
 
-## 功能特点
+## Features
 
-- 支持多个数据源：
+- **Multiple data sources:**
   - LinkedIn
   - Indeed
   - Glassdoor
   - ZipRecruiter
   - Google Jobs
 
+- **Robust search options:**
+  - Keyword search
+  - Location filtering
+  - Job type filtering
+  - Time range filtering
+  - Remote-only filtering
+  - Custom search queries
 
-- 强大的搜索功能：
-  - 关键词搜索
-  - 地理位置过滤
-  - 工作类型过滤
-  - 时间范围过滤
-  - 远程工作过滤
-  - 自定义搜索条件
+- **Data consolidation:**
+  - Automatic de-duplication
+  - Unified data schema
+  - Merge results from multiple sources
+  - Export to CSV
 
-- 数据整合：
-  - 自动去重
-  - 统一数据格式
-  - 多源数据合并
-  - 支持导出为 CSV
+## Installation
 
-## 安装
-
-1. 克隆仓库：
+1. Clone the repository:
 ```bash
 git clone https://github.com/yourusername/JobCrawler.git
 cd JobCrawler
 ```
 
-2. 安装依赖：
+2. Install dependencies:
 ```bash
 pip install -r requirements.txt
 ```
 
-## 使用方法
+## Usage
 
-### 基本使用
-
+### Basic usage
 ```bash
-#运行 test.py文件
-cd JobCraeler
+# Run the test.py script
+cd JobCrawler
 python test.py
 ```
-结果生成在 JobCrawler/jobs.csv
 
-## 参数说明
+The results will be saved to `JobCrawler/jobs.csv`.
 
-| 参数 | 类型 | 说明 |
-|------|------|------|
-| site_name | str/list | 要搜索的网站列表 |
-| search_term | str | 搜索关键词 |
-| google_search_term | str | 自定义 Google 搜索词 |
-| location | str | 地理位置 |
-| distance | int | 搜索半径（英里） |
-| is_remote | bool | 是否仅远程工作 |
-| job_type | str | 工作类型 |
-| results_wanted | int | 需要的结果数量 |
-| hours_old | int | 职位发布时间范围（小时） |
-| country_indeed | str | Indeed 网站国家 |
+## Parameters
 
-## 工作类型支持
+| Parameter             | Type      | Description                                   |
+|-----------------------|-----------|-----------------------------------------------|
+| `site_name`           | str/list  | List of sites to search                       |
+| `search_term`         | str       | Keyword(s) to search                          |
+| `google_search_term`  | str       | Custom Google search query                    |
+| `location`            | str       | Location filter                               |
+| `distance`            | int       | Search radius (miles)                         |
+| `is_remote`           | bool      | Remote-only filter                            |
+| `job_type`            | str       | Job type                                      |
+| `results_wanted`      | int       | Number of results desired                     |
+| `hours_old`           | int       | Posted time window (hours)                    |
+| `country_indeed`      | str       | Country code for the Indeed site              |
 
-- FULL_TIME（全职）
-- PART_TIME（兼职）
-- CONTRACT（合同工）
-- TEMPORARY（临时工）
-- INTERNSHIP（实习）
-- PER_DIEM（按日计薪）
-- NIGHTS（夜班）
-- OTHER（其他）
-- SUMMER（暑期工）
-- VOLUNTEER（志愿者）
+## Supported Job Types
 
-## 国家支持
+- FULL_TIME
+- PART_TIME
+- CONTRACT
+- TEMPORARY
+- INTERNSHIP
+- PER_DIEM
+- NIGHTS
+- OTHER
+- SUMMER
+- VOLUNTEER
 
-支持多个国家的职位搜索，包括：
+## Supported Countries
+
+Supports job searches in multiple countries, including (but not limited to):
 - USA
 - UK
 - Canada
@@ -91,33 +91,33 @@ python test.py
 - France
 - India
 - Japan
-- 等更多国家
+- And more
 
-## 注意事项
+## Notes
 
-1. 使用 ScraperAPI：
-   - 需要有效的 API 密钥
-   - 注意请求限制
-   - 建议使用代理池
+1. **Using ScraperAPI:**
+   - Requires a valid API key
+   - Respect request quotas/limits
+   - A rotating proxy pool is recommended
 
-2. 数据使用：
-   - 遵守网站的使用条款
-   - 注意数据隐私
-   - 合理控制请求频率
+2. **Data usage:**
+   - Comply with each website’s Terms of Service
+   - Respect data privacy
+   - Throttle request rates appropriately
 
-3. 性能优化：
-   - 使用适当的并发数
-   - 控制请求间隔
-   - 合理设置超时时间
+3. **Performance tuning:**
+   - Choose a sensible level of concurrency
+   - Control inter-request delays
+   - Set reasonable timeouts
 
-## 贡献
+## Contributing
 
-欢迎提交 Pull Request 或创建 Issue 来改进项目。
+Contributions are welcome! Please open an Issue or submit a Pull Request.
 
-## 许可证
+## License
 
 MIT License
 
-## 免责声明
+## Disclaimer
 
-本项目仅供学习和研究使用，请遵守相关网站的使用条款和规定。使用本项目产生的任何后果由使用者自行承担。
+This project is intended for learning and research purposes only. Please comply with the terms and policies of the websites you access. You assume full responsibility for any outcomes resulting from the use of this project.
